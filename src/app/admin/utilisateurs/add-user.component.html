@@ -1,0 +1,37 @@
+<div class="contaier">
+<div class="row justify-content-center">
+  <div class="col-xl-10 shadow-lg bg-white rounded mt-5">
+    <h3 class="mb-3 text-center">Add User</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="user.username" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="user.name" class="form-control" placeholder="Name">
+    </div><div class="form-group">
+      <input type="text" [(ngModel)]="user.fisrtName" class="form-control" placeholder="FirstName">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="user.lastName" class="form-control" placeholder="LastName">
+    </div>
+    <div class="form-group">
+      <input type="email" [(ngModel)]="user.email" class="form-control" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <input type="password" [(ngModel)]="user.password" class="form-control" placeholder="PassWord">
+    </div>
+    <div class="form-group">
+      <input type="file"  style="display: none" #filInput [(ngModel)]="user.photo" class="form-control" placeholder="Avatar" (change)="onFileSelected($event)">
+
+      <button type="button" class="btn btn-success" (click)="filInput.click()">Avatar</button>
+    </div>
+    <div class="form-group">
+      <select matNativeControl [(ngModel)]="user.profil">
+        <option *ngFor="let profil of profils" [value]="profil.id">{{ profil.libelle }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addUser()">Add User</button>
+    </div>
+  </div>
+</div>
+</div>

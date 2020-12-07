@@ -1,0 +1,29 @@
+
+  <div class="row panel panel-primary">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12  mt-4">
+      <table datatable class="row-border-hover bg-light shadow-lg ">
+
+        <thead>
+        <tr>
+          <th>Username</th>
+          <th>email</th>
+          <th>firstname</th>
+          <th>lastname</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users" routerLinkActive="active" >
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.fisrtName }}</td>
+          <td>{{ user.lastName }}</td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+</div>
+  <div class="row">
+    <button (click)="goBack()" class="btn-outline-info">go back</button>
+  </div>
+
